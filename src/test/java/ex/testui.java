@@ -1,15 +1,8 @@
 package ex;
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Keys;
-
-import java.io.File;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class testui {
@@ -52,14 +45,22 @@ public class testui {
         $(".react-datepicker__day--029").click();
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
+        
         $("label[for=hobbies-checkbox-3]").click();
+
 
         $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
 
         $("#currentAddress").setValue(CURRENT_ADDRESS);
 
+        
+
+        
+
+
         $("#react-select-3-input").setValue("ut").pressEnter();
         $("#react-select-4-input").setValue("luc").pressEnter();
+        
         $("#submit").click();
 
     }
