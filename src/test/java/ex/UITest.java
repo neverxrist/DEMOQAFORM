@@ -22,7 +22,7 @@ public class UITest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "2540x1440";
 
     }
 
