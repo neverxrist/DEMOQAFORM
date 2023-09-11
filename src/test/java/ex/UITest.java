@@ -40,7 +40,7 @@ public class UITest {
         $("#userNumber").setValue(USER_NUMBER);
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(4);
+        $(".react-datepicker__month-select").selectOption(6);
         $(".react-datepicker__year-select").selectOption("2000");
         $(".react-datepicker__day--029").click();
 
