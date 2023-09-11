@@ -37,6 +37,7 @@ public class testui {
         executeJavaScript("$('footer').remove()");
 
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
         $("#firstName").setValue(FIRST_NAME);
         $("#lastName").setValue(SECOND_NAME);
         $("#userEmail").setValue(USER_EMAIL);
@@ -52,11 +53,12 @@ public class testui {
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
         $("label[for=hobbies-checkbox-3]").click();
+
         $("#uploadPicture").uploadFile(new File("image/with_day_of_day.jpg"));
+
         $("#currentAddress").setValue(CURRENT_ADDRESS);
-        $("#state").click();
+
         $("#react-select-3-input").setValue("ut").pressEnter();
-        $("#city").click();
         $("#react-select-4-input").setValue("luc").pressEnter();
         $("#submit").click();
 
