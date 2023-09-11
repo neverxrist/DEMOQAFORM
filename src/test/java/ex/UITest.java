@@ -21,7 +21,6 @@ public class UITest {
     static void beforeAll() {
 
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "2540x1440";
 
