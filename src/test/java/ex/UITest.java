@@ -37,7 +37,7 @@ public class UITest {
         $("#firstName").setValue(FIRST_NAME);
         $("#lastName").setValue(SECOND_NAME);
         $("#userEmail").setValue(USER_EMAIL);
-
+        // COMPARE
         $("#genterWrapper").$(byText(GENDER)).click();
 
         $("#userNumber").setValue(USER_NUMBER);
