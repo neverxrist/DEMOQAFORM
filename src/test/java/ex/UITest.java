@@ -69,11 +69,12 @@ public class UITest {
                 text(USER_NUMBER),
                 text(SUBJECTS),
                 text(CURRENT_ADDRESS),
+                text(GENDER),
+                text(HOBBY),
                 text("with_day_of_day.jpg"),
                 text("Uttar Pradesh"),
                 text("Lucknow"),
-                text("Male"),
-                text("Music")
+                text("29 June,2000")
         );
     }
 
