@@ -51,13 +51,16 @@ public class testui {
         $(".react-datepicker__day--029").click();
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
+        
         $("label[for=hobbies-checkbox-3]").click();
+        
         $("#uploadPicture").uploadFile(new File("image/with_day_of_day.jpg"));
+        
         $("#currentAddress").setValue(CURRENT_ADDRESS);
-        $("#state").click();
+        
         $("#react-select-3-input").setValue("ut").pressEnter();
-        $("#city").click();
         $("#react-select-4-input").setValue("luc").pressEnter();
+        
         $("#submit").click();
 
     }
