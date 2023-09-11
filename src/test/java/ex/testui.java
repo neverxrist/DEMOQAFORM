@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class testui {
+public class TestUI {
     public static final String FIRST_NAME = "Andrey";
     public static final String SECOND_NAME = "NEVERMIND";
     public static final String USER_EMAIL = "QATEST@QA.RU";
@@ -48,15 +48,9 @@ public class testui {
         
         $("label[for=hobbies-checkbox-3]").click();
 
-
         $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
 
         $("#currentAddress").setValue(CURRENT_ADDRESS);
-
-        
-
-        
-
 
         $("#react-select-3-input").setValue("ut").pressEnter();
         $("#react-select-4-input").setValue("luc").pressEnter();
