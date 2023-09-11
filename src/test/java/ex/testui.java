@@ -22,7 +22,7 @@ public class testui {
 
 
     @BeforeAll
-    static void beforeAll() {
+    static void BeforeAll() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
@@ -31,7 +31,7 @@ public class testui {
     }
 
     @Test
-    void uitest() {
+    void UItest() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -54,7 +54,7 @@ public class testui {
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
         $("label[for=hobbies-checkbox-3]").click();
 
-        $("#uploadPicture").uploadFile(new File("image/with_day_of_day.jpg"));
+        $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
 
         $("#currentAddress").setValue(CURRENT_ADDRESS);
 
@@ -62,6 +62,23 @@ public class testui {
         $("#react-select-4-input").setValue("luc").pressEnter();
         $("#submit").click();
 
+    }
+    @Test
+    final void Check() {
+        $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
+        $(".modal-content").shouldHave(
+                text(FIRST_NAME),
+                text(SECOND_NAME),
+                text(USER_EMAIL),
+                text(USER_NUMBER),
+                text(SUBJECTS),
+                text(CURRENT_ADDRESS),
+                text("with_day_of_day.jpg"),
+                text("Uttar Pradesh"),
+                text("Lucknow"),
+                text("Male"),
+                text("Music")
+        );
     }
 
 }
