@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestUI {
+public class UI_Test {
     public static final String FIRST_NAME = "Andrey";
     public static final String SECOND_NAME = "NEVERMIND";
     public static final String USER_EMAIL = "QATEST@QA.RU";
@@ -15,7 +15,7 @@ public class TestUI {
 
 
     @BeforeAll
-    static void BeforeAll() {
+    static void beforeall() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
@@ -24,7 +24,7 @@ public class TestUI {
     }
 
     @Test
-    void UItest() {
+    void uitest() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -45,7 +45,7 @@ public class TestUI {
         $(".react-datepicker__day--029").click();
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
-        
+
         $("label[for=hobbies-checkbox-3]").click();
 
         $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
@@ -54,12 +54,10 @@ public class TestUI {
 
         $("#react-select-3-input").setValue("ut").pressEnter();
         $("#react-select-4-input").setValue("luc").pressEnter();
-        
+
         $("#submit").click();
 
-    }
-    @Test
-    final void Check() {
+
         $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
         $(".modal-content").shouldHave(
                 text(FIRST_NAME),
