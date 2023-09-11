@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class UI_Test {
+public class UITest {
     public static final String FIRST_NAME = "Andrey";
     public static final String SECOND_NAME = "NEVERMIND";
     public static final String USER_EMAIL = "QATEST@QA.RU";
