@@ -3,6 +3,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class UITest {
@@ -12,10 +13,12 @@ public class UITest {
     public static final String USER_NUMBER = "8005553535";
     public static final String SUBJECTS = "English";
     public static final String CURRENT_ADDRESS = "NEVERMIND 541231";
+    public static final String GENDER = "Male";
+    public static final String HOBBY = "Music";
 
 
     @BeforeAll
-    static void beforeall() {
+    static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = "https://demoqa.com";
@@ -24,7 +27,7 @@ public class UITest {
     }
 
     @Test
-    void uitest() {
+    void testUI() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -35,7 +38,7 @@ public class UITest {
         $("#lastName").setValue(SECOND_NAME);
         $("#userEmail").setValue(USER_EMAIL);
 
-        $("label[for=gender-radio-1]").click();
+        $("#genterWrapper").$(byText(GENDER)).click();
 
         $("#userNumber").setValue(USER_NUMBER);
 
@@ -46,7 +49,7 @@ public class UITest {
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
 
-        $("label[for=hobbies-checkbox-3]").click();
+        $("#hobbiesWrapper").$(byText(HOBBY)).click();
 
         $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
 
