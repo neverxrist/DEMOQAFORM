@@ -66,7 +66,6 @@ public class UITest {
 
         $("#submit").click();
 
-
         $(".modal-dialog").shouldHave(text("Thanks for submitting the form"));
         $(".modal-content").shouldHave(
                 text(FIRST_NAME),
