@@ -15,6 +15,11 @@ public class UITest {
     public static final String CURRENT_ADDRESS = "NEVERMIND 541231";
     public static final String GENDER = "Male";
     public static final String HOBBY = "Music";
+    public static final String DD_MM = "29 June";
+    public static final String YYYY = "2000";
+    public static final String STATE = "Uttar Pradesh";
+    public static final String CITY = "Lucknow";
+    public static final String IMAGE = "with_day_of_day.jpg";
 
 
     @BeforeAll
@@ -22,7 +27,8 @@ public class UITest {
 
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "2540x1440";
+        Configuration.browserSize = "2560x1440";
+
 
     }
 
@@ -44,14 +50,14 @@ public class UITest {
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(6);
-        $(".react-datepicker__year-select").selectOption("2000");
+        $(".react-datepicker__year-select").selectOption(YYYY);
         $(".react-datepicker__day--029").click();
 
         $("#subjectsInput").setValue(SUBJECTS).pressEnter();
 
         $("#hobbiesWrapper").$(byText(HOBBY)).click();
 
-        $("#uploadPicture").uploadFromClasspath("image/with_day_of_day.jpg");
+        $("#uploadPicture").uploadFromClasspath("image/" + IMAGE);
 
         $("#currentAddress").setValue(CURRENT_ADDRESS);
 
@@ -71,10 +77,11 @@ public class UITest {
                 text(CURRENT_ADDRESS),
                 text(GENDER),
                 text(HOBBY),
-                text("with_day_of_day.jpg"),
-                text("Uttar Pradesh"),
-                text("Lucknow"),
-                text("29 June,2000")
+                text(IMAGE),
+                text(STATE),
+                text(CITY),
+                text(DD_MM + "," + YYYY)
+
         );
     }
 
